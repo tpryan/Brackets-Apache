@@ -2,7 +2,7 @@
     "name": "brackets-apache-syntax",
     "title": "Apache Syntax for Brackets",
     "description": "Adds syntax support for Apache configuration files",
-    "homepage": "https://github.com/tpryan/Brackets-Reflow-Cleaner",
+    "homepage": "https://github.com/tpryan/Brackets-Apache",
     "version": "1.0.0",
     "author": "Terry Ryan <terryr@adobe.com> (http://terrenceryan.com)",
     "license": "MIT",
