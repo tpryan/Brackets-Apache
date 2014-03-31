@@ -1,11 +1,11 @@
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
-/*global define, $, brackets */
+/*global define, brackets */
 
-define(function (require, exports, module) {
+define(function () {
     'use strict';
 
-
-    var LanguageManager = brackets.getModule("language/LanguageManager");
+    var CodeMirror      = brackets.getModule("thirdparty/CodeMirror2/lib/codemirror"),
+        LanguageManager = brackets.getModule("language/LanguageManager");
 
     CodeMirror.defineMode("apache", function () {
         return {
@@ -30,7 +30,7 @@ define(function (require, exports, module) {
                 }
 
                 if (sol) {
-                    while (stream.eatSpace());
+                    while (stream.eatSpace()) {}
                 }
 
                 var ch = stream.next();
@@ -44,9 +44,9 @@ define(function (require, exports, module) {
                     //return null;
                 } else if (ch === '"') {
                     if (stream.skipTo('"')) { // Quote found on this line
-                      stream.next();          // Skip quote
+                        stream.next();          // Skip quote
                     } else {
-                       stream.skipToEnd();    // Rest of line is string
+                        stream.skipToEnd();    // Rest of line is string
                     }
                     state.position = "quote";
 
